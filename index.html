@@ -24,19 +24,36 @@
             border: none;
             border-radius: 10px;
         }
+        @media (max-width: 600) {
+
+        h1 {
+            font-size: 42px;
+            margin-top: 12px;
+        }    
+
+        p {
+            font-size: 24px;
+            padding: 0 20px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 20px 40px;
+           }
+        } 
     </style>
 </head>
 
 <body>
-    <h1>Привіт! Вас Вітає Таміла!👋</h1>
+    <h1>Hi, welcome.</h1>
 
-    <p>Тебе взламали!</p>
+    <p>You've been hacked.</p>
 
-    <button onclick="sayHello()">Натисни мене</button>
+    <button onclick="sayHello()">Press me!</button>
 
     <script>
         function sayHello() {
-            alert("Настя Жопа!");
+            alert("Sithupa is Stupid!");
         }
     </script>
 
