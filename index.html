@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>>
+<head>
     <style>
         body {
             background-color: pink;
+            text-align: center;
         }
 
         h1 {
-            color: purple;
-            font-size: 40px;
+            color: rgb(97, 14, 97);
+            font-size: 50px;
         }
 
         p {
             color: black;
-            font-size: 20px;
+            font-size: 60px;
         }
 
         button {
             background-color: purple;
             color: white;
-            font-size: 18px;
+            font-size: 100px;
             padding: 12px 25px;
             border: none;
-            border-radius: 10px;
+            border-radius: 20px;
+            display: block;
+            max-width: 40px auto;
+            display: block;
+            margin: 200px auto 0;
+
         }
         @media (max-width: 600) {
 
@@ -39,24 +45,67 @@
         button {
             font-size: 24px;
             padding: 20px 40px;
+
            }
         } 
+        .heart {
+            position: fixed;
+            font-size: 30px;
+            animation: fly 1.5s ease-out forwards;
+            pointer-events: none;
+
+        }
+        
+        @keyframes fly {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-300px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        #message {
+            display: none;
+            font-size: 30px;
+            color: purple;
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 
 <body>
-    <h1>Hi, welcome.</h1>
+    <h1> Тебе вітає Таміла!.</h1>
 
-    <p>You've been hacked.</p>
+    <p> Ту мач бьютіфул!!.</p>
 
-    <button onclick="sayHello()">Press me!</button>
+    <button onclick="sayHello()">Тикай!</button>
+    <div id="message">❤️ Надобраніч! ❤️</div>
 
     <script>
         function sayHello() {
-            alert("Sithupa is Stupid!");
-        }
+            document.getElementById("message").style.display = "block";
+            for (let i = 0; i < 15; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.className = "heart";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "70vh";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function() {
+            heart.remove();
+        }, 1500);
+    }
+}
     </script>
 
-</body>
-
-</html>
